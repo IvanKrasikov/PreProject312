@@ -2,6 +2,7 @@ package com.example.PreProject312.controller;
 
 import com.example.PreProject312.model.User;
 import com.example.PreProject312.service.UserService;
+import com.example.PreProject312.service.UserServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -35,7 +36,7 @@ public class UserController {
 
     @GetMapping("/{id}/update")
     public String update(Model model, @PathVariable("id") Long id) {
-        model.addAttribute("user",userService.findDyId(id));
+        model.addAttribute("user", userService.findById(id));
         return "update";
     }
 
